@@ -1,6 +1,1 @@
-fastapi
-uvicorn
-transformers
-torch
-whisper
-gdown
+
