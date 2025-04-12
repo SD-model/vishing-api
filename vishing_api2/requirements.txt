@@ -1,4 +1,6 @@
 fastapi
 uvicorn
-torch
 transformers
+torch
+whisper
+gdown
