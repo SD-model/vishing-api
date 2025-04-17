@@ -14,15 +14,15 @@ import whisper
 app = FastAPI()
 
 # -------- إعداد النموذج: تحميل من Google Drive إذا لم يكن موجود --------
-MODEL_DIR = "vishing_model/FINAL_vishing_detection_model_2025-03-19_22-18-11"
-GDRIVE_ZIP_URL = "https://drive.google.com/uc?id=1HDDSV6abkXuLXZSjHvWsh4hsaVtnCGLz"
+MODEL_DIR = "Furqan11/vishing_bert"
+# GDRIVE_ZIP_URL = "https://drive.google.com/uc?id=1HDDSV6abkXuLXZSjHvWsh4hsaVtnCGLz"
 
-if not os.path.exists(MODEL_DIR):
-    print("🔄 تحميل النموذج من Google Drive...")
-    gdown.download(GDRIVE_ZIP_URL, output="model.zip", quiet=False)
-    with zipfile.ZipFile("model.zip", 'r') as zip_ref:
-        zip_ref.extractall(MODEL_DIR)
-    print("✅ تم فك ضغط النموذج!")
+# if not os.path.exists(MODEL_DIR):
+#     print("🔄 تحميل النموذج من Google Drive...")
+#     gdown.download(GDRIVE_ZIP_URL, output="model.zip", quiet=False)
+#     with zipfile.ZipFile("model.zip", 'r') as zip_ref:
+#         zip_ref.extractall(MODEL_DIR)
+#     print("✅ تم فك ضغط النموذج!")
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_DIR)
