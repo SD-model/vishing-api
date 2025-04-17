@@ -14,7 +14,7 @@ import whisper
 app = FastAPI()
 
 # -------- إعداد النموذج: تحميل من Google Drive إذا لم يكن موجود --------
-MODEL_DIR = "vishing_model"
+MODEL_DIR = "vishing_model/FINAL_vishing_detection_model_2025-03-19_22-18-11"
 GDRIVE_ZIP_URL = "https://drive.google.com/uc?id=1HDDSV6abkXuLXZSjHvWsh4hsaVtnCGLz"
 
 if not os.path.exists(MODEL_DIR):
